@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" rel="stylesheet" href="styles.css">
+    <script src="functions.js"></script>
+    <title>Juego del Ahorcado</title>
+</head>
+
+<body onload="lanzadera()">
+    <div id="controles">
+        <button id="bt-pantalla-completa" onclick="toggleFullScreen();">Pantalla completa</button>
+        <button id="musica" onclick="reproducirMusica()">Music</button>
+    </div>
+    <div id="categoria">
+        <select name="opciones" id="opciones">
+            <option value="0">seleccionar categoria</option>
+            <option value="1">cultura</option>
+            <option value="2">electrodomesticos</option>
+            <option value="3">tecnologia</option>
+        </select>
+        <p id="cultura" style="display: none;">momumento cuadro vino</p>
+        <p id="electrodomesticos" style="display: none;">television lavadora lavavajillas horno frigorifico</p>
+        <p id="tecnologia" style="display: none;">smartphone portatil smartband tablet</p>
+    </div>
+    <div id="juego">
+        <p id="vidas" style="display: none;"></p>
+        <button id="jugar" onclick="getNuevaPalabra()">JUGAR</button>
+        <p id="guiones" style="display: none;"></p>
+        <p id="parrafoOculto" style="display: none;">
+            <input type="text" id="letra">
+            <input type="submit" value="Enviar" onclick="comprobarSiHayEsaLetra(this)">
+        </p>
+        <div id="botonera"></div>
+    </div>
+</body>
+
+</html>

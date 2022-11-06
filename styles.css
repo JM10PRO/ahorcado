@@ -1,0 +1,83 @@
+@font-face {
+    font-family: Carnivalee Freakshow;
+    src: url(fonts/carnivalee_freakshow/Carnevalee\ Freakshow.ttf);
+}
+
+body {
+    background: #ff0000ae url(img/western6.png) no-repeat center center fixed;
+    font-family: Carnivalee Freakshow;
+    display: block;
+    min-width: 1000px;
+    min-height: 1000px;
+}
+
+button, select{
+    font-family: Carnivalee Freakshow;
+    font-size: 2.75rem;
+    margin: 0.1875rem;  
+    background-color: indianred;
+    border-radius: 1rem;
+    border: 0rem;
+}
+
+button:hover {
+    background-color: burlywood;
+}
+
+div {
+    margin: 0 auto;
+    max-width: 50rem;
+    padding: 0.625rem;
+}
+
+p {
+    font-weight: 900;
+}
+
+/* #vidas {
+    text-align: center;
+    text-shadow: 0.0625rem 0.0625rem 0.125rem black;
+    font-size: 2.75rem;
+    letter-spacing: 0.125rem;
+} */
+
+/* #guiones {
+    color: orangered;
+    text-shadow: 0.0625rem 0.0625rem 0.125rem black;
+    font-size: 2.75rem;
+} */
+
+#botonera {
+    position: absolute;
+    bottom: 0.0625rem;
+    left: 1rem;
+    right: 1rem;
+    max-width: 59.375rem;
+}
+
+#parrafo {
+    font-size: 2.75rem;
+}
+
+#controles {
+    float: left;
+}
+
+#controles button {
+    display: block;
+}
+
+#juego {
+    text-align: center;
+    text-shadow: 0.0625rem 0.0625rem 0.125rem black;
+    font-size: 2.75rem;
+    letter-spacing: 0.125rem;
+}
+
+#juego p {
+    text-align: center;
+}
+
+#categoria {
+    float: right;
+}
