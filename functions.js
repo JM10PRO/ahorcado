@@ -45,7 +45,7 @@ function categoria() {
     categorias = document.getElementById('opciones');
 
     let categoriaSeleccionada = categorias.options[categorias.selectedIndex].textContent;
-    console.log(categoriaSeleccionada);
+    
     if (categoriaSeleccionada != "seleccionar categoria") {
         let arrayPalabrasCategoria = document.getElementById(categoriaSeleccionada).textContent.split(" ");
 
@@ -53,13 +53,9 @@ function categoria() {
 
         palabraSeleccionada = arrayPalabrasCategoria[indice];
     } else {
-        console.log('categoria no seleccionada');
-
         categorias.options[0].textContent = 'categoria random';
 
         let indiceAleatorio = getRandomNumber(1, categorias.options.length - 1).toFixed(0);
-
-        console.log(indiceAleatorio);
 
         let categoriaAleatoria = categorias.options[indiceAleatorio].textContent;
 
@@ -99,12 +95,10 @@ function getPalabraOculta() {
 
 function getGuiones(palabra) {
     let letras = palabra.split("");
-    console.log(letras);
+
     for (let i = 0; i < letras.length; i++) {
         palabraOcultada[i] = " _ ";
     }
-    console.log(palabraOcultada);
-    console.log(palabraOcultada.length);
 }
 
 function mostrarBotonera() {
@@ -127,13 +121,11 @@ function borrarBotonesBotonera() {
     }
 }
 function comprobarSiHayEsaLetra(botonLetra) {
-    console.log(botonLetra);
     letra = botonLetra.innerText.toLowerCase();
     botonLetra.disable = true;
     botonLetra.style.opacity = 0.7;
     botonLetra.style.backgroundColor = 'gray';
     botonLetra.setAttribute('onclick', '');
-    console.log(letra);
     let letraEncontrada = false;
 
     for (let i = 0; i < palabraOcultada.length; i++) {
@@ -141,17 +133,14 @@ function comprobarSiHayEsaLetra(botonLetra) {
             palabraOcultada[i] = letra;
             let contenido = getPalabraOculta();
             parrafoGuiones.textContent = contenido;
-            console.log(palabraOcultada);
             letraEncontrada = true;
             letrasRestantes--;
         }
     }
 
     document.getElementById('letra').value = "";
+
     if (letraEncontrada) {
-        console.log('está la letra');
-        console.log('letras restantes = ' + letrasRestantes);
-        console.log(palabraSeleccionada.length);
         if (letrasRestantes == 0) {
             sonidoWinner();
             parrafoVidas.style.color = 'green';
@@ -164,7 +153,6 @@ function comprobarSiHayEsaLetra(botonLetra) {
             numeroVidas = 6;
         }
     } else {
-        console.log('NO está la letra');
         sonidoFallo();
         numeroVidas--;
         numeroVidas = actualizaEstadoVidas();
@@ -215,11 +203,9 @@ function muestraFondoHangMan(numeroVidas) {
 
 function reproducirMusica() {
     if (music.paused) {
-        console.log("reproduce");
         music.loop = true;
         music.play();
     } else {
-        console.log("pausado");
         music.pause();
     }
 }
